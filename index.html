@@ -1,37 +1,45 @@
+<!doctype html>
 <html lang="en">
     
 	<head>
 		<title>Gautham Padmakumar</title>
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type = "text/css" href="style.css">
-		
 	</head>
 
 	<body>
-		<div id="topbar">
-        <ul>
-            <li><a target="_blank" href="resume.pdf">Resume</a></li>
-            <li><a href="#aboutme">About Me</a></li>
-            <li><a href="#home">Home</a></li>
-        </ul>
-			<h1 id="header home" align="center">GAUTHAM PADMAKUMAR</h1>	
+		<div class="intro-bg"></div>
+		<div class="topbar">
+	        <ul>
+	            <li><a href="#home">Home</a></li>
+	            <li><a href="#aboutme">About Me</a></li>
+	            <li><a target="_blank" href="resume.pdf" rel="nofollow">Resume</a></li>
+	        </ul>
+			<h1 id="home" class="header"><b>Gautham</b> Padmakumar</h1>	
+			<p class="sub-head"><span id="ellipsisContainer"></span><span id="pipe">|</span></p>
 		</div>
         
-		<img id="headshot"src="images/gpsqhd2.jpg">
+		<img class="headshot" src="images/gpsqhd2.jpg">
 		
-		<div id="headinfo">
-		<p id="aboutme" class="section_header" align="center"><u>About me</u></p>
-		<p id="para1">
-		<p id="para1">Hi there!</p><p id="para1"> I'm a 2<sup id="superscr">nd</sup> year Software Engineering major at the University of Western Ontario</p>
-		</p>
-		
-		<p id="para1">I'm passionate about software development</p>
-        <p id="para1">My main interests are Android and Frontend</p>
-		<p id="para1"> Currently seeking Software Engineering Intern positions for Summer 2017 </p>
+		<div class="headinfo">
+			<h2 id="aboutme" class="section_header" align="center">About me</h2>
+
+			<p class="para1 emphasize">Hi there!</p>
+			<p class="para1"> I'm a 2<sup class="superscr">nd</sup> year Software Engineering major at the University of Western Ontario</p>
+	        <p class="para1">
+	        	My areas of interest are <b>Android</b> and <b>Front-end web-dev</b>.
+	        	<br/ >
+	        	I'm currently seeking Software Engineering Intern positions for Summer 2017.
+	        </p>
+			<p class="para1">
+				&rarr;
+	        	Feel free to check out my <a href="resume.pdf" target="_blank">resume</a>, or email me at <a href="mailto:gpadmaku@gmail.com">gpadmaku@gmail.com</a>
+	        	&larr;
+	        </p>
 		
         </div>
         
-        <div id="socialbar">
+        <div class="socialbar">
             <div class="container">
             <div class="ImageHolder"><a href="http://github.com/gpadmaku1"><img src="images/github.png"></a></div>
             <div class="ImageHolder"><a href="http://linkedin.com/in/gpadmaku"><img src="images/linkedin.png"></a></div>
@@ -39,6 +47,56 @@
             </div>
         </div>
 		
+	<script type="text/javascript">
+		var textToType = "Thanks for stopping by... :)".split(''), finalText = "Thanks for stopping by... " + String.fromCodePoint(0x1F604);
+		var initialBlinkCount = 5;
+
+		document.addEventListener("DOMContentLoaded", function() { 
+			var el = document.getElementById('ellipsisContainer');
+			var pipe = document.getElementById('pipe');
+			var toggler = true;
+			var initialBlinks = setInterval(function() {
+				if (!initialBlinkCount) {
+					clearInterval(initialBlinks);
+				};
+
+				pipe.style = "opacity:0;";
+
+				setTimeout(function() {
+					pipe.style = "";
+				}, 200);
+
+				initialBlinkCount --;
+			}, 500);
+
+			setTimeout(startTyping, 2500);
+
+			function startTyping() {
+				var typer = setInterval(function() {
+					if (textToType.length) {
+						var charToAdd = textToType.shift();
+						el.innerHTML += charToAdd;
+					} else {
+						clearInterval(typer);
+						startBlinkingPipe();
+						el.innerHTML = finalText;
+					};
+				}, 125);
+			}
+
+			function startBlinkingPipe() {
+				setInterval(function() {
+					pipe.style = "opacity:0;";
+
+					setTimeout(function() {
+						pipe.style = "";
+					}, 300);
+				}, 700);
+			}
+
+		});
+
+	</script>
 	</body>
 	
 </html>	
