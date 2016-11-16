@@ -170,6 +170,16 @@ body
     box-shadow: 0px 3px 12px -6px black;
 }
 
+.meme{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.meme-body{
+    background-color: #FFC220;
+}
 .para1
 {
     margin-left:20px;
